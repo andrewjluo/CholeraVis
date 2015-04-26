@@ -34,6 +34,20 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
 
 var parseDate = d3.time.format("%d-%b-%y").parse;
 
+var movingWindowAvg = function (arr, step) {  // Window size = 2 * step + 1
+    return arr.map(function (_, idx) { 
+        var leftBound = (idx - step >= 0) ? idx - step : 0;
+        var rightBound = (idx + step + 1 <= arr.length - 1) ? idx + step + 1 : arr.length - 1;
+        var wnd = arr.slice(idx - step, idx + step + 1); 
+        var result = d3.sum(wnd, function(d) {return d.close}) / wnd.length;
+        // Check for isNaN, the javascript way
+        result = (result == result) ? result : _.close;
+        result = Math.round(result).toString();
+        var newobj = {date: _.date, close: result};  
+        return newobj;
+    });
+};
+
 var x = d3.time.scale()
     .range([0, width]);
 
@@ -64,7 +78,10 @@ d3.tsv("data2.tsv", function(error, data2) {
     d.date = parseDate(d.date);
     d.close = +d.close;
   });
-
+  var data3 = movingWindowAvg(data2, 7);
+  data3.forEach(function(d) {
+    d.close = +d.close;
+  });
   x.domain(d3.extent(data2, function(d) { return d.date; }));
   y.domain(d3.extent(data2, function(d) { return d.close; }));
 
@@ -88,9 +105,9 @@ d3.tsv("data2.tsv", function(error, data2) {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("# of Cases");
-
+  
   svg.append("path")
-      .datum(data2)
+      .datum(data3)
       .attr("class", "line")
       .attr("d", line);
 });
