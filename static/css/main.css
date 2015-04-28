@@ -27,7 +27,18 @@ a {
   color: #FFF;
 }
 /* Main elements end */
+#navbar-custom {
+	background: #3a8aa9;
+}
 
+#navbar-custom a {
+	background:#3a8aa9;
+	color: white;
+}
+
+body {
+	background: #e9e9e9;
+}
 
 /*****************************************************************************
  * Various other styles
