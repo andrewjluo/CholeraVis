@@ -51,6 +51,24 @@ body {
 }
 
 /*****************************************************************************
+ * Radio button at top
+ ****************************************************************************/
+.pagination.pagination-custom li a {
+  width: 83px;
+  text-align: center;
+  color: black;
+  border-width:0px;
+  border-bottom-width: 1px;
+  border-color: black;
+}
+.pagination.pagination-custom li a:focus {
+  border-bottom-width: 3px;
+  background:white;
+}
+
+
+
+/*****************************************************************************
  * Case Number Visualization
  ****************************************************************************/
 
