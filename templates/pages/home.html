@@ -1,15 +1,43 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-
-<div class="page-header">
-  <h1>Sticky footer with fixed navbar</h1>
-</div>
-<p class="lead">Pin sdfisda fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>
-
-<div class="col-md-6">hiasdf;k
-</div>
-<div class="col-md-6">hiasdf;k
-</div>
+  
+  <div class="col-md-6">
+    <div class="card">
+      <nav>
+        <ul class="pagination pagination-custom">
+          <li><a href="#">1W</a></li>
+          <li><a href="#">2M</a></li>
+          <li><a href="#">3M</a></li>
+          <li><a href="#">6M</a></li>
+          <li><a href="#">1Y</a></li>
+          <li><a href="#">3Y</a></li>
+        </ul>
+      </nav>
+      <h3> Case Numbers </h3>
+      <div id="case_num_v">
+      </div>
+      <h3> Severity Index </h3>
+      <div>
+        <p> Kendua <p>
+        <div id="main_sev_v" class="severity">
+        </div>
+      </div>
+      <div>
+        <p> National <p>
+        <div id="avg_sev_v" class="severity">
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+       HI THIS IS CONTAINER #2
+    </div>
+  </div>
+  
+  <script src="static/js/avg_severity.js"></script>
+  <script src="static/js/case_number.js"></script>
+  <script src="static/js/main_severity.js"></script>
 
 {% endblock %}

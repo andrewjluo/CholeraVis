@@ -36,12 +36,86 @@ a {
 	color: white;
 }
 
+.pagination.pagination-custom {
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.card {
+  padding: 10px;
+  background :#FFF;
+}
+
 body {
 	background: #e9e9e9;
 }
 
 /*****************************************************************************
- * Various other styles
+ * Case Number Visualization
  ****************************************************************************/
 
-/* Various other styles end */
+#case_num_v {
+  font: 10px sans-serif;
+}
+
+#case_num_v .axis path,
+#case_num_v .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#case_num_v .x.axis path {
+  display: none;
+}
+
+#case_num_v .line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+/* Case Number Visualization End */
+
+/*****************************************************************************
+ * Severity Visualization
+ ****************************************************************************/
+.severity svg {
+  font: 14px 'Sans-serif';
+}
+
+.severity .axis path,
+.severity .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.severity .axis text {
+  fill: #000;
+}
+
+.severity .area.positive {
+  fill: rgba(230, 230, 255, 0.8);
+  stroke: rgba(216, 216, 255, 0.8);
+}
+
+.severity .area.negative,
+.severity .legend .inner {
+  fill: rgba(127, 127, 255, 0.8);
+  stroke: rgba(96, 96, 255, 0.8);
+}
+
+.severity .axis .tick line {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+.severity .area {
+  stroke-width: 1;
+}
+
+.severity .area {
+  fill: url("#area-gradient")
+}
+
+/*Severity Visualization End */
