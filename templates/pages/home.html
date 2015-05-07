@@ -2,7 +2,25 @@
 {% block title %}Home{% endblock %}
 {% block content %}
   
-  <div class="col-md-6">
+  <div class="selections">
+    <span class="select_elem">
+      <p>Chief Complaint: </p>
+      <select class="selectpicker">
+        <option>Diarrhea (all)</option>
+        <option>Stock Outs </option>
+        <option>Fatalitites </option>
+        <option>Cholera </option>
+      </select>
+      <script>
+        $(".selectpicker").selectpicker();
+      </script>
+    </span>
+    <span class="select_elem">
+      <p>Location: </p>
+      <input type="text" class="form-control" placeholder="Location"></input>
+    </span>
+  </div>
+  <div class="box box-left col-md-6">
     <div class="card">
       <nav>
         <ul class="pagination pagination-custom">
@@ -19,25 +37,27 @@
       </div>
       <h3> Severity Index </h3>
       <div>
-        <p> Kendua <p>
+        <p class="chart_head"> Kendua <p>
         <div id="main_sev_v" class="severity">
         </div>
       </div>
       <div>
-        <p> National <p>
+        <p class="chart_head"> National <p>
         <div id="avg_sev_v" class="severity">
       </div>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="box box-right col-md-6">
     <div class="card">
-       HI THIS IS CONTAINER #2
+      <div id="home_map_v">
+      </div>
     </div>
   </div>
   
   <script src="static/js/avg_severity.js"></script>
   <script src="static/js/case_number.js"></script>
   <script src="static/js/main_severity.js"></script>
+  <script src="static/js/home_map.js"></script>
 
 {% endblock %}

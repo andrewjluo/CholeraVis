@@ -35,6 +35,15 @@ a {
 	background:#3a8aa9;
 	color: white;
 }
+#navbar-custom.navbar-default .caret {
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+#navbar-custom .dropdown-menu a {
+  color: black;
+  background: white;
+}
 
 .pagination.pagination-custom {
   margin: 0px;
@@ -44,10 +53,52 @@ a {
 .card {
   padding: 10px;
   background :#FFF;
+  margin-bottom: 30px;
+  box-shadow: 0 0 1.5px black;
+  width: 550px;
+}
+
+.box-right .card {
+  padding-right: 15px;
+}
+.box-left .card {
+  padding-left: 25px;
+}
+
+h3 {
+  font-weight: 300;
+}
+p.chart_head {
+  font-weight: 900;
 }
 
 body {
 	background: #e9e9e9;
+}
+
+.box-right {
+  padding-right: 0px;
+}
+.box-left {
+  padding-left: 0px;
+}
+
+.selections {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.selections p{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.select_elem {
+  margin-right: 30px;
+}
+
+.selections input {
+  width: 500px;
+  display: inline-block;
 }
 
 /*****************************************************************************
@@ -83,14 +134,14 @@ body {
   shape-rendering: crispEdges;
 }
 
-#case_num_v .x.axis path {
-  display: none;
-}
-
 #case_num_v .line {
   fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke: #A1D49A;
+  stroke-width: 2.5px;
+}
+
+#case_num_v circle {
+  fill: #6BCEF7;
 }
 
 /* Case Number Visualization End */
@@ -107,6 +158,17 @@ body {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
+}
+
+.severity .line {
+  fill: none;
+  stroke: #A9A9A9;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.severity .x.axis path {
+  display: none;
 }
 
 .severity .axis text {
@@ -137,3 +199,18 @@ body {
 }
 
 /*Severity Visualization End */
+
+/*****************************************************************************
+ * Home Map Visualization
+ ****************************************************************************/
+#home_map_v .q0-9 { fill:rgb(247,251,255); }
+#home_map_v .q1-9 { fill:rgb(222,235,247); }
+#home_map_v .q2-9 { fill:rgb(198,219,239); }
+#home_map_v .q3-9 { fill:rgb(158,202,225); }
+#home_map_v .q4-9 { fill:rgb(107,174,214); }
+#home_map_v .q5-9 { fill:rgb(66,146,198); }
+#home_map_v .q6-9 { fill:rgb(33,113,181); }
+#home_map_v .q7-9 { fill:rgb(8,81,156); }
+#home_map_v .q8-9 { fill:rgb(8,48,107); }	
+
+/* Home Map Visualization End */

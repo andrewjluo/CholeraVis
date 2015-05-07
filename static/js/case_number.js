@@ -1,7 +1,7 @@
 (function() {
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = 500 - margin.left - margin.right,
-      height = 250 - margin.top - margin.bottom;
+      height = 200 - margin.top - margin.bottom;
 
   var parseDate = d3.time.format("%d-%b-%y").parse;
 
@@ -9,11 +9,11 @@
       return arr.map(function (_, idx) { 
           var leftBound = (idx - step >= 0) ? idx - step : 0;
           var rightBound = (idx + step + 1 <= arr.length - 1) ? idx + step + 1 : arr.length - 1;
-          var wnd = arr.slice(idx - step, idx + step + 1); 
+          var wnd = arr.slice(leftBound, rightBound); 
           var result = d3.sum(wnd, function(d) {return d.close}) / wnd.length;
           // Check for isNaN, the javascript way
           result = (result == result) ? result : _.close;
-          result = Math.round(result).toString();
+          result = Math.round(result);
           var newobj = {date: _.date, close: result};  
           return newobj;
       });
@@ -49,18 +49,23 @@
       d.date = parseDate(d.date);
       d.close = +d.close;
     });
-    var data3 = movingWindowAvg(data2, 7);
+    var data3 = movingWindowAvg(data2, 15);
     data3.forEach(function(d) {
       d.close = +d.close;
     });
     x.domain(d3.extent(data2, function(d) { return d.date; }));
     y.domain(d3.extent(data2, function(d) { return d.close; }));
 
-    svg.selectAll("circle").data(data2).enter()
+    var spliced_data = [];
+    for (var i = 0; i < data2.length; i = i + 4) {
+      spliced_data.push(data2[i]);
+    }
+
+    svg.selectAll("circle").data(spliced_data).enter()
       .append("circle")
         .attr("cx", function(d){return x(d.date);})
         .attr("cy",function(d){return y(d.close);})
-        .attr("r", 2);
+        .attr("r", 3);
     
     svg.append("g")
         .attr("class", "x axis")
