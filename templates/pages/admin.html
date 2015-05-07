@@ -1,0 +1,42 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Admin{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="static/css/admin.css">
+{% endblock %}
+{% block content %}
+
+<div class="selections">
+    <span class="select_elem">
+      <p>Chief Complaint: </p>
+      <select class="selectpicker">
+        <option>Diarrhea (all)</option>
+        <option>Stock Outs </option>
+        <option>Fatalitites </option>
+        <option>Cholera </option>
+      </select>
+      <script>
+        $(".selectpicker").selectpicker();
+      </script>
+    </span>
+    <span class="select_elem">
+      <p>Location: </p>
+      <input type="text" class="form-control" placeholder="Location"></input>
+    </span>
+  </div>
+  <div class="box box-left col-md-6">
+    <div class="card">
+      <div id="main_table_v">
+      </div>
+    </div>
+  </div>
+  <div class="box box-right col-md-6">
+    <div class="card">
+      <div id="home_map_v">
+      </div>
+    </div>
+  </div>
+  
+  <script src="static/js/admin_table.js"></script>
+  <script src="static/js/home_map.js"></script>
+
+{% endblock %}

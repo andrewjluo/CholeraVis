@@ -1,0 +1,25 @@
+/* Make Table Take Full Width */
+#main_table_v {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 15px;
+}
+#main_table_v table { width: 100% }
+
+/* Bold First Column */
+#main_table_v tr > td:first-child { font-weight: bold }
+
+/* Alternate Row Colors */
+#main_table_v tr:nth-child(even) { background: #F9F9F9 }
+#main_table_v tr:nth-child(odd) { background: #FFFFFF }
+
+/* Border and Spacing Between Rows */
+#main_table_v th { border-bottom: 2px solid #DDDDDD }
+#main_table_v td { border-top: 1px solid #DDDDDD }
+#main_table_v td, th { padding: 0.75em 0.5em }
+
+/* Column Widths */
+#main_table_v_col1 { width: 25% }
+#main_table_v_col2 { width: 25% }
+#main_table_v_col3 { width: 25% }
+#main_table_v_col4 { width: 25% }
