@@ -1,7 +1,10 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Home{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+{% endblock %}
 {% block content %}
-  
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <div class="selections">
     <span class="select_elem">
       <p>Chief Complaint: </p>
@@ -50,8 +53,10 @@
   </div>
   <div class="box box-right col-md-6">
     <div class="card">
-      <div id="home_map_v">
-      </div>
+      <div id="slider_labels"></div>
+      <p>Range: <span id="amount"></span></p>
+      <div id="slider_range"></div>
+      <div id="home_map_v"></div>
     </div>
   </div>
   
@@ -59,5 +64,6 @@
   <script src="static/js/case_number.js"></script>
   <script src="static/js/main_severity.js"></script>
   <script src="static/js/home_map.js"></script>
+  <script src="static/js/home_map_slider.js"></script>
 
 {% endblock %}

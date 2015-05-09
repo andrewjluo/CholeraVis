@@ -214,3 +214,13 @@ body {
 #home_map_v .q8-9 { fill:rgb(8,48,107); }	
 
 /* Home Map Visualization End */
+
+/*****************************************************************************
+ * Home Map Slider
+ ****************************************************************************/
+#slider_labels_table {
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Home Map Slider End */
