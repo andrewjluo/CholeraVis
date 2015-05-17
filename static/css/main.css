@@ -95,6 +95,8 @@ body {
 .select_elem {
   margin-right: 30px;
 }
+.select_elem.stacked p {
+}
 
 .selections input {
   width: 500px;

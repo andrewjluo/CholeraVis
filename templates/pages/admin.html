@@ -5,24 +5,58 @@
 {% endblock %}
 {% block content %}
 
-<div class="selections">
-    <span class="select_elem">
-      <p>Chief Complaint: </p>
+  <div class="selections">
+    <span class="select_elem stacked">
+      <p>Item 1 </p>
       <select class="selectpicker">
         <option>Diarrhea (all)</option>
         <option>Stock Outs </option>
         <option>Fatalitites </option>
         <option>Cholera </option>
       </select>
-      <script>
-        $(".selectpicker").selectpicker();
-      </script>
     </span>
+
+    <span class="select_elem stacked">
+      <p>Item 2 </p>
+      <select class="selectpicker">
+        <option>Diarrhea (all)</option>
+        <option>Stock Outs </option>
+        <option>Fatalitites </option>
+        <option>Cholera </option>
+      </select>
+    </span>
+
+    <span class="select_elem stacked">
+      <p> Threshold </p>
+      <select class="selectpicker">
+        <option>Diarrhea (all)</option>
+        <option>Stock Outs </option>
+        <option>Fatalitites </option>
+        <option>Cholera </option>
+      </select>
+    </span>
+
+    <span class="select_elem stacked">
+      <p> Time </p>
+      <select class="selectpicker">
+        <option>Diarrhea (all)</option>
+        <option>Stock Outs </option>
+        <option>Fatalitites </option>
+        <option>Cholera </option>
+      </select>
+    </span>
+
+    <script>
+      $(".selectpicker").selectpicker();
+    </script>
+
     <span class="select_elem">
-      <p>Location: </p>
+      <p>Location </p>
       <input type="text" class="form-control" placeholder="Location"></input>
     </span>
+
   </div>
+
   <div class="box box-left col-md-6">
     <div class="card">
       <div id="main_table_v">
