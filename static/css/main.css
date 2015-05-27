@@ -225,4 +225,13 @@ body {
   font-weight: bold;
 }
 
+#slider_labels_table td {
+    width: 14.2%;   /* 100 / 7 = 14.28 */
+    text-align: center;
+}
+
+#slider_range {
+    width: 85%;     /* 100% - half of a cell on each end */
+    margin-left: 7.5%;  /* shift right to be under first cell */
+}
 /* Home Map Slider End */

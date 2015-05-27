@@ -11,11 +11,11 @@ $(function() {
   - add CSS styling to slider
   - maybe use cols / colgroups to control width of table cells
   */
-  var MONTH_LABELS = ['January', 'February', '...'];
+  var MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   for (var i=6; i>=0; i--) {
     var cur_month = new Date(year, month-i, 1).getMonth();
-    tableHTML += "<td>" + MONTH_LABELS[some number] + "</td>";
+    tableHTML += "<td>" + MONTH_LABELS[cur_month] + "</td>";
   }
   tableHTML += "</tr></table>"
   document.getElementById("slider_labels").innerHTML = tableHTML;
